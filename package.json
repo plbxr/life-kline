@@ -1,0 +1,50 @@
+{
+  "name": "life-kline-desktop",
+  "version": "2.0.0",
+  "description": "人生 K 线 - 你的专属人生操盘系统 桌面版",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": [
+    "life-kline",
+    "diary",
+    "electron",
+    "desktop"
+  ],
+  "author": "plbxr",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.plbxr.life-kline",
+    "productName": "人生 K 线",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "life_kline_v2.html",
+      "data/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "icon.png"
+    }
+  }
+}
